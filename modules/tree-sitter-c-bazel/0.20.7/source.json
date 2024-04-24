@@ -1,0 +1,5 @@
+{
+    "url": "https://github.com/zadlg/tree-sitter-c-bazel/releases/download/v0.20.7/tree-sitter-c.tar.gz",
+    "integrity": "sha384-BHwTCxgJKdx7Y/gy/CvJ9sdRG7t2cC5nwcbbNtbnzaiEsrCIyU+JwoINeQ4SAylq",
+    "strip_prefix": "tree-sitter-c-bazel-0.20.7"
+}
