@@ -10,13 +10,13 @@ jobs:
     steps:
       - name: Harden Runner
         if: github.repository_owner == 'bazelbuild'
-        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
+        uses: step-security/harden-runner@0080882f6c36860b6ba35c610c98ce87d4e2f26f # v2.10.2
         with:
           egress-policy: audit
 
       - name: Run BCR PR Reviewer
         if: github.repository_owner == 'bazelbuild'
-        uses: bazelbuild/continuous-integration/actions/bcr-pr-reviewer@2997e589af56c74eeccaf79640f20a6b40e1b0b6 # master
+        uses: bazelbuild/continuous-integration/actions/bcr-pr-reviewer@abb92bbd05306ecf90ac61baeaa534823d5f122a # master
         with:
           # This token needs to be updated annually on Feb 05.
           token: ${{ secrets.BCR_PR_REVIEW_HELPER_TOKEN }}
