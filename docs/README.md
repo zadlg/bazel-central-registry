@@ -33,7 +33,7 @@ bazel run //tools:add_module
 
 The script will generate all required changes based on your input, please review, modify and commit the change, then send a PR to the BCR repository.
 
-If you are the project owner, you can set up the [Publish to BCR](https://github.com/apps/publish-to-bcr) Github App for your repository to automatically send a PR to the BCR when cutting a new release.
+If you are the project owner, you can set up [Publish to BCR](https://github.com/bazel-contrib/publish-to-bcr) GitHub release automation for your repository to automatically send a PR to the BCR when cutting a new release.
 
 When manually editing files you may find `bazel run -- //tools:update_integrity foomod` useful to update the integrity hashes in foomod's source.json file.
 The tool also accepts a `--version` option to update the `source.json` of a specific version of the module (instead of latest).
@@ -206,6 +206,10 @@ To be submitted, a PR needs to:
 - Pass [presubmit](#presubmit) checks
   - If you see your presubmit check stuck on "blocked", a BCR maintainer needs to explicitly unblock the presubmit run or apply the `presubmit-auto-run` label to your PR. This is to avoid abuse of our CI system. Feel free to ping `@bazelbuild/bcr-maintainers` if you're blocked on this.
 - Pass certain other checks, especially for first-time contributors, such as CLA signing or GitHub workflows that require approval from BCR maintainers.
+
+In case a release is broken, the PR to publish it may never be merged.
+Module maintainers can ask the `bazel-io` bot to close a PR by commenting `@bazel-io abandon` on the PR thread.
+This is intended for cases where the PR is opened by a bot account, and helps BCR maintainers keep the PR backlog manageable.
 
 ## Module versions
 
